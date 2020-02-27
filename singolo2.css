@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900&display=swap');
+@import url('reset.css');
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;  
+  font-family: 'Lato', sans-serif;
+}
+html {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/*      Portfolio     */
+.container-portfolio {
+  background: #323746;
+  height: 870px;
+  font-family: 'Lato', sans-serif;
+}
+.portfolio {
+  height: 864px;
+  padding: 64px 40px;
+  background: #2d303a;
+  color: #666d89;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+}
+.header {
+  padding-bottom: 16px;
+}
+.header h1 {
+  font-size: 30px;  
+  font-weight: 900;
+  padding-bottom: 25px;  
+}
+.header p {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: lighter;
+}
+nav.portfolio-menu {
+  display: flex;
+  flex-direction: row;  
+  padding-bottom: 18px;
+}
+.portfolio-menu-item {
+  font-size: 12px;  
+  font-weight: normal;  
+  border: 1px solid #666d89;
+  border-radius: 5px;
+  padding: 4px 6px;  
+}
+.portfolio-menu-item + .portfolio-menu-item {
+  margin-left: 10px;
+}
+
+.portfolio-gallery {  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -10px;
+  overflow: hidden;  
+}
+/* .portfolio-gallery-item + .portfolio-gallery-item {
+  margin-left: 20px;
+} */
+div.portfolio-gallery-item {
+  width: 220px;
+  height: 187px;
+  margin: 10px;
+}
+div.portfolio-gallery-item img {
+  width: 100%;
+  height: 100%;
+}
+div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
+  display: none;
+}
+/*      /Portfolio     */
+
+/*      About Us    */
+.about-us {
+  padding: 64px 40px;
+  background: #f2f2f2;
+  font-family: 'Lato', sans-serif;  
+  color: #666d89;
+}
+.about-us-header {  
+  padding-bottom: 46px;
+}
+.about-us-header h2 {  
+  font-size: 30px;  
+  font-weight: 900;
+  padding-bottom: 20px;  
+}
+.about-us-header p {
+  font-size: 18px; 
+  line-height: 30px;
+}
+.people {
+  display: flex;
+  flex-direction: row;
+  margin: -10px;
+}
+.person {
+  margin: 10px;
+}
+.person-photo {
+  width: 300px;
+  height: 300px;  
+}
+.person-photo img {
+  width:100%;
+  height: 100%;
+}
+.person-info h3 {
+  padding: 16px 0px 10px 0px;
+  font-weight: 900;
+  font-size: 18px;
+}
+.person-info p {  
+  font-weight: lighter;
+  font-size: 12px;
+  line-height: 22px;
+  padding-bottom: 22px;
+}
+.social_media {
+  display: flex;
+  flex-direction: row;
+  margin: -8px;
+}
+.social_media-item {
+  margin: 8px;
+}
+/*      / About Us    */
