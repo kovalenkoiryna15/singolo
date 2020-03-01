@@ -53,7 +53,7 @@ header {
   font-size: 12px;
   color: #ffffff;
 }
-.menu-item:first-child a {
+.menu-item:hover a {
   color: #e76962;
 }
 
@@ -79,6 +79,9 @@ header {
 }
 .arrow-container {
   width: 66px;  
+}
+.arrow-container:hover {
+  filter: invert(100%);
 }
 .arrow {  
   display: block;
