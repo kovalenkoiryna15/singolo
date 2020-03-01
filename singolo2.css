@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
 @import url('reset.css');
 
 * {
@@ -50,10 +50,13 @@ nav.portfolio-menu {
   border-radius: 5px;
   padding: 4px 6px;  
 }
+.portfolio-menu-item:hover {
+  border-color: #c5c5c5;
+  color: #c5c5c5;
+}
 .portfolio-menu-item + .portfolio-menu-item {
   margin-left: 10px;
 }
-
 .portfolio-gallery {  
   display: flex;
   flex-direction: row;
@@ -61,9 +64,6 @@ nav.portfolio-menu {
   margin: -10px;
   overflow: hidden;  
 }
-/* .portfolio-gallery-item + .portfolio-gallery-item {
-  margin-left: 20px;
-} */
 div.portfolio-gallery-item {
   width: 220px;
   height: 187px;
@@ -79,8 +79,12 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
 /*      /Portfolio     */
 
 /*      About Us    */
+.container-about-us {
+  height: 728px;
+  background: #ffffff;
+}
 .about-us {
-  padding: 64px 40px;
+  padding: 64px 40px 56px 40px;
   background: #f2f2f2;
   font-family: 'Lato', sans-serif;  
   color: #666d89;
@@ -94,7 +98,9 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
   padding-bottom: 20px;  
 }
 .about-us-header p {
+  color: #767e9e;
   font-size: 18px; 
+  font-weight: 300;   
   line-height: 30px;
 }
 .people {
@@ -119,17 +125,22 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
   font-size: 18px;
 }
 .person-info p {  
-  font-weight: lighter;
+  font-weight: 400;
+  letter-spacing: 0.1px;
   font-size: 12px;
-  line-height: 22px;
+  line-height: 21.8px;
   padding-bottom: 22px;
 }
 .social_media {
   display: flex;
   flex-direction: row;
-  margin: -8px;
+  margin: -4px;  
 }
 .social_media-item {
-  margin: 8px;
+  margin: 4px;
+  border-radius: 20px;
+}
+.social_media-item:hover {
+  filter: invert(100%);  
 }
 /*      / About Us    */
