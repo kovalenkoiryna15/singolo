@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
 @import url('reset.css');
 
 * {
@@ -14,9 +14,7 @@ html {
 /*      HEADER     */
 header {
   background: #323746;
-  height: 95px;
-  font-family: "Lato", sans-serif;    
-  font-weight: bold;
+  height: 95px;  
   text-transform: uppercase;
   align-items: baseline;
 }
@@ -26,36 +24,51 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
-.logo, .menu-container {
+.logo {
   padding: 32px 40px 33px 40px;    
 }
 .logo {
-  flex-grow: 2;
+  flex-grow: 2.5;
 }
 .logo a {
-  font-size: 24px;
+  font-family: "Lato", sans-serif;    
+  font-weight: 700;  
+  font-size: 25px;
   color: #ffffff;     
 }
 .logo span {
   color: #e76962;;
 }
-.menu-container {    
+.menu-container {
+  padding: 32px 39px 34px 40px;
+      
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-right: 10px;
   align-items: flex-end;
+
+  list-style: disc;
+  list-style-position: inside;
+  font-size: 10px;
+  vertical-align: text-top;  
+}
+#first-child {  
+  list-style: none;
 }
 .menu-item {    
-  padding-right: 30px;    
+  padding-left: 14px;
+  color: #494e62;   
 }
-.menu-item a {        
+.menu-item a {
+  font-family: "Lato", sans-serif;    
+  font-weight: 700;       
   font-size: 12px;
   color: #ffffff;
 }
 .menu-item:hover a {
   color: #e76962;
 }
+
 
 /*      /HEADER     */
 
@@ -66,8 +79,9 @@ header {
   height: 600px;
 }
 .slider-block {
+  height: 594px;
   padding-top: 53px;
-  padding-bottom: 58px;
+  padding-bottom: 80px;
   padding-left: 45px;
   padding-right: 45px;
   
@@ -123,46 +137,50 @@ header {
   padding-right: 30px;
 
   background: #f2f2f2;
-  height: 494px;
-  font-family: "Lato", sans-serif;  
-  color: #666d89;
+  height: 494px;     
 
   display: flex;
   flex-direction: column;
 }
 .pre-services-item {
-  padding-top: 60px;
+  padding-top: 62px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.pre-services-item h1 {  
-  font-size: 32px;
-  font-weight: bold;
+.pre-services-item h1 {
+  font-family: "Lato", sans-serif;
+  color: #666d89;
+  font-size: 30px;
+  font-weight: 900;
 }
-.pre-services-item p {
-  padding-top: 20px;
-
+.pre-services-item p {  
+  padding-top: 22px;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  color: #767e9e;
   font-size: 18px;  
-  line-height: 32px;
+  font-weight: 300;
+  line-height: 30px;
 }
 .services-container {
-  padding-top: 45px;
-
+  padding-top: 44px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;  
 }
-.services-container h4 {
-  font-size: 18px;
-  font-weight: bold;  
+.services-container h4 {  
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  color: #666d89;
+  font-size: 18px;  
+  font-weight: 900;   
 }
 .services-item {
-  padding-bottom: 16px;
-
+  padding-bottom: 32px;
   width: 320px;
   display: flex;  
 }
-.services-item-img {
+.services-item-img {  
   padding-left: 10px;
   padding-right: 20px;
 }
@@ -170,16 +188,17 @@ header {
   border-radius: 20px;
   width: 60px;
 }
-.services-item.description {
+.description {
   padding-right: 10px;
-
-  width: 200px;
 }
 .description p {
   padding-top: 10px;
-
-  font-size: 14px;  
-  line-height: 20px;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  color: #767e9e;
+  font-size: 12px;  
+  font-weight: 300;
+  line-height: 21.5px;  
 }
 /*      /OUR SERVICES BLOCK      */
 
