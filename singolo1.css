@@ -1,34 +1,30 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
 @import url('reset.css');
-
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
 * {
   box-sizing: border-box;
-  text-decoration: none;
-  color: #000;
+  text-decoration: none;  
+  font-family: 'Lato', sans-serif;
+  color: inherit;
 }
-html {
+html, body {
   max-width: 1020px;
   margin: 0 auto;
 }
 
 /*      HEADER     */
-header {
-  background: #323746;
-  height: 95px;  
-  text-transform: uppercase;
-  align-items: baseline;
-}
-.header-container {
+
+.header_s1-container {
+  padding: 0px 0px 6px 0px;
   background: #2d303a;    
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: row;  
+}
+.header_s1 {
+  background: #323746;    
+  text-transform: uppercase;  
 }
 .logo {
-  padding: 32px 40px 33px 40px;    
-}
-.logo {
-  flex-grow: 2.5;
+  padding: 32px 40px 33px 40px;  
 }
 .logo a {
   font-family: "Lato", sans-serif;    
@@ -40,17 +36,12 @@ header {
   color: #e76962;;
 }
 .menu-container {
-  padding: 32px 39px 34px 40px;
-      
+  padding: 32px 39px 34px 40px;      
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-
   list-style: disc;
   list-style-position: inside;
-  font-size: 10px;
-  vertical-align: text-top;  
+  font-size: 10px;   
 }
 #first-child {  
   list-style: none;
@@ -133,12 +124,9 @@ header {
 /*      /OUR SERVICES BLOCK      */
 
 .our-services-block {
-  padding-left: 30px;
-  padding-right: 30px;
-
+  padding: 0px 30px;
   background: #f2f2f2;
-  height: 494px;     
-
+  height: 494px;
   display: flex;
   flex-direction: column;
 }
