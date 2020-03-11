@@ -1,0 +1,145 @@
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap');
+* {
+  box-sizing: border-box;
+  text-decoration: none;  
+  font-family: 'Lato', sans-serif;
+  color: inherit;
+}
+html, body {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+/*      Portfolio     */
+.container-portfolio {
+  background: #323746;
+  height: 870px;
+  font-family: 'Lato', sans-serif;
+}
+.portfolio {
+  height: 864px;
+  padding: 64px 40px;
+  background: #2d303a;
+  color: #666d89;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+}
+.header {
+  padding-bottom: 16px;
+}
+.header h1 {
+  font-size: 30px;  
+  font-weight: 900;
+  padding-bottom: 25px;  
+}
+.header p {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: lighter;
+}
+nav.portfolio-menu {
+  display: flex;
+  flex-direction: row;  
+  padding-bottom: 18px;
+}
+.portfolio-menu-item {
+  font-size: 12px;  
+  font-weight: normal;  
+  border: 1px solid #666d89;
+  border-radius: 5px;
+  padding: 4px 6px;  
+}
+.portfolio-menu-item:hover {
+  border-color: #c5c5c5;
+  color: #c5c5c5;
+}
+.portfolio-menu-item + .portfolio-menu-item {
+  margin-left: 10px;
+}
+.portfolio-gallery {  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -10px;
+  overflow: hidden;  
+}
+div.portfolio-gallery-item {
+  width: 220px;
+  height: 187px;
+  margin: 10px;
+}
+div.portfolio-gallery-item img {
+  width: 100%;
+  height: 100%;
+}
+div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
+  display: none;
+}
+/*      /Portfolio     */
+
+/*      About Us    */
+.container-about-us {
+  height: 728px;
+  background: #ffffff;
+}
+.about-us {
+  padding: 64px 40px 56px 40px;
+  background: #f2f2f2;
+  font-family: 'Lato', sans-serif;  
+  color: #666d89;
+}
+.about-us-header {  
+  padding-bottom: 46px;
+}
+.about-us-header h2 {  
+  font-size: 30px;  
+  font-weight: 900;
+  padding-bottom: 20px;  
+}
+.about-us-header p {
+  color: #767e9e;
+  font-size: 18px; 
+  font-weight: 300;   
+  line-height: 30px;
+}
+.people {
+  display: flex;
+  flex-direction: row;
+  margin: -10px;
+}
+.person {
+  margin: 10px;
+}
+.person-photo {
+  width: 300px;
+  height: 300px;  
+}
+.person-photo img {
+  width:100%;
+  height: 100%;
+}
+.person-info h3 {
+  padding: 16px 0px 10px 0px;
+  font-weight: 900;
+  font-size: 18px;
+}
+.person-info p {  
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  font-size: 12px;
+  line-height: 21.8px;
+  padding-bottom: 22px;
+}
+.social_media {
+  display: flex;
+  flex-direction: row;
+  margin: -4px;  
+}
+.social_media-item {
+  margin: 4px;
+  border-radius: 20px;
+}
+.social_media-item:hover {
+  filter: invert(100%);  
+}
+/*      / About Us    */
