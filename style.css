@@ -179,6 +179,8 @@ html, body {
   padding-right: 10px;
 }
 .description p {
+  height: 73px;
+  width: 220px;
   padding-top: 10px;
   text-align: justify;
   font-family: "Lato", sans-serif;
@@ -186,6 +188,9 @@ html, body {
   font-size: 12px;  
   font-weight: 300;
   line-height: 21.5px;  
+
+  overflow: hidden;
+  text-overflow: clip;
 }
 /*      /OUR SERVICES BLOCK      */
 
@@ -302,10 +307,15 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
   height: 100%;
 }
 .person-info h3 {
+  height: 44px;
+  width: 300px;
   padding: 16px 0px 10px 0px;
   font-weight: 900;
   font-size: 18px;
-  text-overflow: ellipsis;
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 .person-info p {  
   font-weight: 400;
