@@ -1,5 +1,6 @@
 const body = document.querySelector('body');
 
+// Header ...
 const Singolo = document.getElementById('s1');
 window.addEventListener("unload", function() {
   Singolo.scrollIntoView();
@@ -18,6 +19,7 @@ menu.addEventListener('click', (event) => {
   });
 });
 
+// Slider ...
 const sliderBlock = document.querySelector('.slider-block');
 const containerSlide1 = document.querySelector('.container-Slide-1');
 const containerSlide2 = document.querySelector('.container-Slide-2');
@@ -56,10 +58,203 @@ arrows.forEach( (elem, index) => {
         sliders[1].style.display = 'none';
         sliders[0].style.display = 'flex';
         currentSlide = sliders[0];
-      }
-    }
+      };
+    };    
+  });
+});
+
+// Phones ...
+const phoneV = document.querySelector('.p-v-p');
+const phoneH = document.querySelector('.p-h-p');
+const phones = [phoneV, phoneH];
+
+class Phone {
+  constructor(phone) {
+    this.display = 1;
+    if (phone == phoneV) {
+      this.phoneDisplay = document.querySelector('.p-v-d');
+    } else {
+      this.phoneDisplay = document.querySelector('.p-h-d');
+    };
+  };
+  render() {
+    if (this.display == 1) {
+      this.phoneDisplay.style.display = 'none';
+      this.display = 0;
+    } else {
+      this.phoneDisplay.style.display = 'block';
+      this.display = 1;
+    };
+  };
+};
+const VerticalPhone = new Phone (phoneV);
+const HorizontalPhone = new Phone (phoneH);
+
+phones.forEach((elem, index) => {
+  elem.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (index == 0) {
+      VerticalPhone.render();
+    } else {
+      HorizontalPhone.render();
+    };
+  });
+});
+
+// Tabs...
+let portfolioContainer = document.querySelector('.portfolio-gallery');
+const all = document.querySelector('#all');
+const webDesign = document.querySelector('#web-design');
+const graphicDesign = document.querySelector('#graphic-design');
+const artwork = document.querySelector('#artwork');
+const menuItems = [all, webDesign, graphicDesign, artwork];
+
+let portfolioImagesSRCs = [];
+const imagesCount = 12;
+
+function createImageMarkup(i) { 
+  let wrapper = document.createElement('div');
+  wrapper.classList.add('portfolio-gallery-item');
+  let image = document.createElement('img');  
+  image.setAttribute('src', `assets/pic${i}.jpg`);
+  image.setAttribute('alt', '');
+  wrapper.appendChild(image);  
+  return wrapper;
+};
+
+class MenuItem {
+  constructor () {
+    this.active = 0;
+    this.portfolio = [];    
+  }
+  render(item) {
     
-      
-  })
-})
+    portfolioContainer.innerHTML = '';
+     
+    if (item == all) {
+      for (let i = imagesCount; i > 0; i--) {
+        let elem = createImageMarkup(i);
+        this.portfolio.push(elem);         
+      };
+    } else if (item == webDesign) {
+      for (let i = 1; i <= imagesCount; i++) {
+        let elem = createImageMarkup(i);
+        this.portfolio.push(elem);         
+      };     
+    } else if (item == graphicDesign) {
+      for (let i = 1; i <= imagesCount; i = i+2) {
+        let elem = createImageMarkup(i);
+        this.portfolio.push(elem);         
+      };      
+      for (let i = 2; i <= imagesCount; i = i+2) {
+        let elem = createImageMarkup(i);
+        this.portfolio.push(elem);         
+      };
+    } else if (item == artwork) {
+      for (let i = 2; i <= imagesCount; i = i+2) {
+        let elem = createImageMarkup(i);
+        this.portfolio.push(elem);         
+      };
+      for (let i = 1; i <= imagesCount; i = i+2) {
+        let elem = createImageMarkup(i);
+        this.portfolio.push(elem);         
+      }; 
+    } else {
+      console.log('error');
+    };
+    this.portfolio.forEach(elem =>{
+      portfolioContainer.appendChild(elem);
+    });        
+  };
+};
+
+const All = new MenuItem(all);
+const WebDesign = new MenuItem(webDesign);
+const GraphicDesign = new MenuItem(graphicDesign);
+const Artwork = new MenuItem(artwork);
+
+menuItems.forEach(elem => {
+  elem.addEventListener('click', (event) =>{
+    event.preventDefault();    
+    if (elem == all) {
+      All.render(all);
+    } else if (elem == webDesign) {
+      WebDesign.render(webDesign);
+    } else if (elem == graphicDesign) {
+      GraphicDesign.render(graphicDesign);
+    } else if (elem == artwork) {
+      Artwork.render(artwork);
+    } else {
+      console.log('error');
+    };
+  });
+});
+
+// Tabs Activation...
+portfolioContainer.addEventListener('click', (event) => {
+  event.preventDefault();
+  document.querySelectorAll('img').forEach(elem => elem.classList.remove('activeImage'));
+  event.target.classList.add('activeImage');      
+});
+
+// Form...
+const form = document.querySelector('form');
+
+form.onsubmit = function (event) {
+  event.preventDefault();
+  const id = Number(form.dataset.id);
+  let userNameField = document.querySelector('[name="name"]').value;
+  let emailField  = document.querySelector('[name="email"]').value;
+  console.log(document.querySelector('[name="subject"]').value);
+  let subjectField  = (document.querySelector('[name="subject"]').value != "")? document.querySelector('[name="subject"]').value: document.querySelector('[name="subject"]').defaultValue;
+  let userMessageField  = (document.querySelector('[name="userMessage"]').value != "undefined")? "Portfolio project": document.querySelector('[name="userMessage"]').defaultValue;
+
+  const user = [ userNameField , emailField , subjectField , userMessageField];
+  showMessage(user);
+  form.reset();  
+  form.dataset.id = '';
+};
+
+function showMessage (user) {
+
+  let [userNameValue, emailValue, subjectValue, userMessageValue] = user;
+
+  let messageBlock = document.createElement('div');
+  messageBlock.classList.add('message-block');
+  let messageContainer = document.createElement('div');
+
+  let successText = document.createElement('p');
+  successText.textContent = 'Your Message was sent.';
+  messageContainer.appendChild(successText);
+  let userName = document.createElement('p');
+  // userName.textContent = `Name: ${userNameValue}`;
+  // messageContainer.appendChild(userName);
+  // let userEmail = document.createElement('p');
+  // userEmail.textContent = `Email: ${emailValue}`;
+  // messageContainer.appendChild(userEmail);
+  let subject = document.createElement('p');
+  subject.textContent = `Subject:${subjectValue}`;
+  messageContainer.appendChild(subject);
+  let userMessage = document.createElement('p');
+  userMessage.textContent = `Description:${userMessageValue}`;
+  messageContainer.appendChild(userMessage);
+  let btnOk = document.createElement('button');
+  btnOk.textContent = 'OK';
+  messageContainer.appendChild(btnOk);
+  messageContainer.classList.add('message-container');
+  messageBlock.appendChild(messageContainer);
+  body.appendChild(messageBlock);
+  
+}
+
+
+
+
+
+
+
+
+
+
+
 
