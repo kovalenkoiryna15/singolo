@@ -200,14 +200,17 @@ portfolioContainer.addEventListener('click', (event) => {
 // Form...
 const form = document.querySelector('form');
 
+let subjectFieldDV = 'Без темы';
+let userMessageValueDV = 'Без описания';
+
 form.onsubmit = function (event) {
   event.preventDefault();
   const id = Number(form.dataset.id);
   let userNameField = document.querySelector('[name="name"]').value;
   let emailField  = document.querySelector('[name="email"]').value;
-  console.log(document.querySelector('[name="subject"]').value);
-  let subjectField  = (document.querySelector('[name="subject"]').value != "")? document.querySelector('[name="subject"]').value: document.querySelector('[name="subject"]').defaultValue;
-  let userMessageField  = (document.querySelector('[name="userMessage"]').value != "undefined")? "Portfolio project": document.querySelector('[name="userMessage"]').defaultValue;
+  
+  let subjectField  = (document.querySelector('[name="subject"]').value != "")? document.querySelector('[name="subject"]').value : subjectFieldDV;
+  let userMessageField  = (document.querySelector('[name="userMessage"]').value != "")? `Описание: Portfolio project`: userMessageValueDV;
 
   const user = [ userNameField , emailField , subjectField , userMessageField];
   showMessage(user);
@@ -224,22 +227,20 @@ function showMessage (user) {
   let messageContainer = document.createElement('div');
 
   let successText = document.createElement('p');
-  successText.textContent = 'Your Message was sent.';
+  successText.textContent = 'Письмо отправлено';
   messageContainer.appendChild(successText);
-  let userName = document.createElement('p');
-  // userName.textContent = `Name: ${userNameValue}`;
-  // messageContainer.appendChild(userName);
-  // let userEmail = document.createElement('p');
-  // userEmail.textContent = `Email: ${emailValue}`;
-  // messageContainer.appendChild(userEmail);
   let subject = document.createElement('p');
-  subject.textContent = `Subject:${subjectValue}`;
+  subject.textContent = (subjectValue != subjectFieldDV)? subjectValue: subjectFieldDV;;
   messageContainer.appendChild(subject);
   let userMessage = document.createElement('p');
-  userMessage.textContent = `Description:${userMessageValue}`;
+  userMessage.textContent = (userMessageValue != userMessageValueDV)? userMessageValue: userMessageValueDV;
   messageContainer.appendChild(userMessage);
   let btnOk = document.createElement('button');
   btnOk.textContent = 'OK';
+  btnOk.addEventListener('click', (event) => {
+    event.preventDefault();
+    body.removeChild(messageBlock);
+  })
   messageContainer.appendChild(btnOk);
   messageContainer.classList.add('message-container');
   messageBlock.appendChild(messageContainer);
