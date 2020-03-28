@@ -13,7 +13,9 @@ html, body {
 
 
 /*      HEADER     */
-
+.sandwich-container {
+  display: none;
+}
 .header_s1-container {
   padding: 0px 0px 6px 0px;  
   background: #323746;   
@@ -149,7 +151,8 @@ li#first-child::before {
 .phone-vertical-small-1, .phone-vertical-small-2 {
   display: inline-block;
   position: relative;
-  width: 156px;
+  width: 19.6%;
+  /* 156px; */
   height: 314px;
   margin: 0;
 }
@@ -539,10 +542,11 @@ form {
 .message-block {
   width: 100vw;
   height: 100vh;
+  background: #0008;
   position: fixed;
   top: 0px;
   left: 0px;
-  background: #0008;
+  
   z-index: 9;
 }
 .message-container {
@@ -651,6 +655,9 @@ footer p {
   .phone.vertical {
     height: 363.5px;
   }
+  .phone-vertical-small-1, .phone-vertical-small-2 {
+    height: 236.31px;
+  }
 
   .phone.horizontal {
     height: 180.71px;    
@@ -679,10 +686,82 @@ footer p {
     max-width: 375px;
     margin: 0 auto;
   }
+  .header_s1 {
+    justify-content: center;
+    padding: 32px 7% 33px 7%;
+  }
+  .logo {
+    flex-grow: 12;
+    padding-left: 52px;
+  }
+  .sandwich-container {     
+    width: 100vw;
+    height: 100vh;    
+    z-index: 100;
+    background: #0008;
+    position: fixed;
+    top: 0px;
+    left: 0px; 
+    
+  }
+  .sandwich-menu-container {     
+    background: #2d303a;
+    width: 75vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 101; 
+    justify-content: center;
+    padding: 32px 7% 33px 7%;
+  }
+  .sandwich-menu {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    padding: 100px 0 0 67px;
+  }
+  .sandwich-menu li.menu-item {
+    padding: 0 0 35px 0;
+  }
+  .sandwich-menu li.menu-item a {
+    font-size: 1em;
+  }
+  .sandwich2 {     
+    transform: rotate(90deg);
+    width: 16px;
+    height: 25px; 
+    background: #2d303a;
+    margin: -10px 0;   
+  }
+  .sandwich2-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .sandwich2-logo .logo a {
+    font-size: 1em;
+  }
+  .sandwich1 {     
+    display: block; 
+    width: 25px;
+    height: 16px; 
+    background: #2d303a;   
+  }  
+  .sandwich1 i, .sandwich2 i {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;  
+  }  
+
   .phone.vertical {
     height: 177.61px;
   }
-
+  .phone-vertical-small-1, .phone-vertical-small-2 {
+    height: 115.45px;
+  }
   .phone.horizontal {
     height: 88.35px;    
   }

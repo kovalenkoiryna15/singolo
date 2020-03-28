@@ -18,6 +18,38 @@ menu.addEventListener('click', (event) => {
     block: 'start'
   });
 });
+// Sandwich ...
+const sandwich1 = document.querySelector('.sandwich1');
+const sandwich2 = document.querySelector('.sandwich2');
+const sandwichMenuContainer = document.querySelector('.sandwich-menu-container');
+
+const sandwichContainer = document.querySelector('.sandwich-container');
+const sandwichMenu = document.querySelector('.sandwich-menu');
+sandwich1.addEventListener('click', (event) => {
+  event.preventDefault();
+  sandwich1.style.display = 'none';
+  sandwichContainer.style.display = 'block';
+});
+sandwich2.addEventListener('click', (event) => {
+  event.preventDefault();
+  sandwich1.style.display = 'block';
+  sandwichContainer.style.display = 'none';
+});
+
+sandwichMenu.addEventListener('click', (event) => {
+  sandwichMenu.querySelectorAll('a').forEach(elem => elem.classList.remove('active'));
+  event.target.classList.add('active');
+  let blockName = event.target.getAttribute('href').substring(1);
+  let block = document.getElementById(blockName);
+  block.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+  event.target.classList.remove('active');
+  sandwichContainer.style.display = 'none';
+  sandwich1.style.display = 'block';
+  
+});
 
 // Slider ...
 const sliderBlock = document.querySelector('.slider-block');
