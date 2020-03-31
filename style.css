@@ -6,31 +6,34 @@
   font-family: 'Lato', sans-serif;
   color: inherit;
 }
-html, body {
-  max-width: 1020px;
+
+/* HEADER */
+
+body {
+  padding-top: 96px;
+}
+
+.header_home_wrapper { 
+  background: #2d303a;
+  border-bottom: 6px solid #323746;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;  
+  width: 100%;
+}
+.header_home {
+  width: 1020px;
   margin: 0 auto;
-}
-
-
-/*      HEADER     */
-.sandwich-container {
-  display: none;
-}
-.header_s1-container {
-  padding: 0px 0px 6px 0px;  
-  background: #323746;   
-}
-.header_s1 {
-  padding: 32px 3.921569% 33px 3.921569%;
-  /* 32px 40px 33px 40px; */
+  background: #2d303a;
+  padding: 32px 3.921569% 33px 3.921569%;   /* 32px 40px 33px 40px; */
   display: flex;
-  flex-direction: row;
-  background: #2d303a; 
-  text-transform: uppercase;    
+  flex-direction: row;   
+  text-transform: uppercase;  
 }
-.menu-container {
-  flex-grow: 2;
-}
+
+/* LOGO */
+
 .logo a {
   font-family: "Lato", sans-serif;    
   font-weight: 700;  
@@ -40,6 +43,9 @@ html, body {
 .logo span {
   color: #e76962;;
 }
+
+/* MENU */
+
 .menu-container {        
   display: flex;
   flex-direction: row;
@@ -48,13 +54,16 @@ html, body {
   text-align: end;
   list-style: disc;
   list-style-position: inside;
-  font-size: 10px;   
+  font-size: 10px;
+  flex-grow: 2;   
 }
 .menu-item {    
-  margin: 0px 0px 0px 1.706526%;  
-  /* 14px */
+  margin: 0px 0px 0px 1.706526%;    /* 14px */
   color: #ffffff;
   list-style: none;
+}
+.active {
+  color: #e76962;
 }
 ul.menu-container li::before {
   color: #494e62;
@@ -74,18 +83,20 @@ li#first-child::before {
 .menu-item a:hover {
   color: #e76962;
 }
-.active {
-  color: #e76962;
+.sandwich-container {
+  display: none;
 }
-/*      /HEADER     */
 
 /*      SLIDER BLOCK     */
 
 .slider-block-container {
-  background: #ea676b;
-  padding: 0px 0px 6px 0px; 
+  width: 100%;
+  background: #f06c64;
+  border-bottom: 6px solid  #ea676b;
 }
 .slider-block {  
+  width: 1020px;
+  margin: 0 auto;
   padding: 53px 0px 57px 0px;  
   background: #f06c64;  
   display: flex;
@@ -102,13 +113,11 @@ li#first-child::before {
   cursor: pointer;
 }
 .arrow {  
-  width: 16%;
-  /* 20px */
+  width: 16%;   /* 20px */
   position: relative;
 }
 .arrow-to-left {
-  left: 40%;
-  /* 45px */
+  left: 40%;   /* 45px */
 }
 .arrow-to-right {
   right: -40%;
@@ -151,8 +160,7 @@ li#first-child::before {
 .phone-vertical-small-1, .phone-vertical-small-2 {
   display: inline-block;
   position: relative;
-  width: 19.6%;
-  /* 156px; */
+  width: 19.6%;   /* 156px; */
   height: 314px;
   margin: 0;
 }
@@ -211,8 +219,7 @@ li#first-child::before {
   position: absolute;
   width: 94.824%; /* 458px */
   height: 90.42%; /* 217px */
-  z-index: 2;
-  /* border-radius: 26px; */
+  z-index: 2;   
   overflow: hidden;
 }
 .p-h-p img {
@@ -231,14 +238,15 @@ li#first-child::before {
   width: 100%;
   height: 100%;
 }
-/*      /SLIDER BLOCK      */
 
-/*      /OUR SERVICES BLOCK      */
+/*      OUR SERVICES BLOCK      */
 .our-services-block_container {
-  padding: 0px 0px 6px 0px;
-  background: #ffffff;
+  border-bottom: 6px solid #ffffff;
+  background: #f2f2f2;
 }
 .our-services-block {
+  width: 1020px;
+  margin: 0 auto;
   padding: 0px 30px 0px 30px;
   background: #f2f2f2;  
   display: flex;
@@ -307,17 +315,17 @@ li#first-child::before {
   overflow: hidden;
   text-overflow: clip;   
 }
-/*      /OUR SERVICES BLOCK      */
-
-/*     SINGOLO 2     */
 
 /*      Portfolio     */
 .container-portfolio {
-  background: #323746;
+  background: #2d303a;
+  border-bottom: 6px solid #323746;
   height: 870px;
   font-family: 'Lato', sans-serif;
 }
 .portfolio {
+  width: 1020px;
+  margin: 0 auto;
   height: 864px;
   padding: 64px 40px;
   background: #2d303a;
@@ -380,14 +388,14 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
   border: 5px solid #F06C64;
 }
 
-/*      /Portfolio     */
-
 /*      About Us    */
-.container-about-us {
-  padding: 0px 0px 6px 0px;
-  background: #ffffff;
+.container-about-us {  
+  background: #f2f2f2;
+  border-bottom: 6px solid #ffffff;
 }
 .about-us {
+  width: 1020px;
+  margin: 0 auto;
   padding: 62px 40px 68px 40px;
   background: #f2f2f2;
   font-family: 'Lato', sans-serif;  
@@ -454,17 +462,16 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
 .social_media-item:hover {
   filter: invert(100%);  
 }
-/*      / About Us    */
 
-/*     /SINGOLO 2     */
-
-/*     SINGOLO 3   */
+/*     Contacts   */
 
 .container-main {
-  background: #ea676b;
-  padding: 0px 0px 6px 0px;
+  border-bottom: 6px solid #ea676b;
+  background: #f06c64;  
 }
 .main_s3 {
+  width: 1020px;
+  margin: 0 auto;
   background: #f06c64;
   padding: 65px 40px 30px 40px;   
 }
@@ -484,13 +491,13 @@ div.portfolio-gallery-item:nth-child(12) ~ div.portfolio-gallery-item {
   color: #f0d8d9;
   padding: 18px 0px 46px 0px; 
 }
-/*      /Header     */
 
+
+/*      Form     */
 .form_contact-information {
   display: flex;
   flex-direction: row;
 }
-/*      Form     */
 form {
   width: 65.85%;   /* 619px */
   display: flex;
@@ -568,9 +575,6 @@ form {
   margin-top: 20px;
 }
 
-/*      /Form     */
-
-
 /*      Contact Information    */
 .contact-information {
   width: 34.15%;
@@ -610,9 +614,14 @@ form {
   background: url("assets/mail.png") no-repeat;
   background-position: left center;  
 }
-/*      /Contact Information    */
+
 /*      Footer     */
+.footer_wrapper {
+  background: #2d303a;
+}
 footer {
+  width: 1020px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   background: #2d303a;
@@ -644,14 +653,21 @@ footer p {
 .social_media-item:hover {
   filter: invert(100%);  
 }
-/*      /Footer     */
-/*      /SINGOLO 3     */
+
 
 @media (max-width: 768px){
-  html, body {
+  html, body, 
+  .header_home, 
+  .slider-block, 
+  .our-services-block, 
+  .portfolio, 
+  .portfolio,
+  .about-us,
+  .main_s3,
+  footer {
     max-width: 768px;
     margin: 0 auto;
-  }
+  }  
   .phone.vertical {
     height: 363.5px;
   }
@@ -682,7 +698,15 @@ footer p {
   }  
 
 @media (max-width: 375px){
-  html, body {
+  html, body, 
+  .header_home, 
+  .slider-block, 
+  .our-services-block, 
+  .portfolio, 
+  .portfolio,
+  .about-us,
+  .main_s3,
+  footer {
     max-width: 375px;
     margin: 0 auto;
   }

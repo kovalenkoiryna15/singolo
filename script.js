@@ -1,23 +1,54 @@
 const body = document.querySelector('body');
 
 // Header ...
-const Singolo = document.getElementById('s1');
+
 window.addEventListener("unload", function() {
-  Singolo.scrollIntoView();
+  document.documentElement.scrollTop = 0;
+});
+
+document.addEventListener('scroll', (event) => {
+  activeMenuItem(event);
 });
 
 const menu = document.querySelector('.menu-container');
 menu.addEventListener('click', (event) => {
-  event.preventDefault();
-  menu.querySelectorAll('a').forEach(elem => elem.classList.remove('active'));
-  event.target.classList.add('active');
-  let blockName = event.target.getAttribute('href').substring(1);
-  let block = document.getElementById(blockName);
-  block.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  event.preventDefault();  
+  if (!(event.target.getAttribute('href') == null)){
+    menu.querySelectorAll('a').forEach(elem => elem.classList.remove('active'));
+    event.target.classList.add('active');
+    let blockName = event.target.getAttribute('href').substring(1);
+    if (blockName == 'Home') {
+      body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      let block = document.getElementById(blockName);
+      block.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    
+  };
 });
+
+function activeMenuItem(ev) {
+  const scrollY = window.scrollY;
+  const blocks = document.querySelectorAll('.block');
+  const menuItems = menu.querySelectorAll('a');
+  blocks.forEach(elem => {
+    if (elem.offsetTop -100  < scrollY && (elem.offsetTop + elem.offsetHeight -100 ) > scrollY) {
+      menuItems.forEach(item => {
+        item.classList.remove('active');
+        if(elem.getAttribute('id') === item.getAttribute('href').substring(1)) {
+          item.classList.add('active');
+        }
+      })
+    }
+  })  
+};
+
 // Sandwich ...
 const sandwich1 = document.querySelector('.sandwich1');
 const sandwich2 = document.querySelector('.sandwich2');
