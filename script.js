@@ -227,6 +227,10 @@ class MenuItem {
     };
     this.portfolio.forEach(elem =>{
       portfolioContainer.appendChild(elem);
+      elem.addEventListener('click', (event) => {    
+        portfolioContainer.querySelectorAll('img').forEach( elem => elem.classList.remove('activeImage'));
+        event.target.classList.add('activeImage');
+      })
     });        
   };
 };
@@ -236,9 +240,11 @@ const WebDesign = new MenuItem(webDesign);
 const GraphicDesign = new MenuItem(graphicDesign);
 const Artwork = new MenuItem(artwork);
 
-menuItems.forEach(elem => {
+menuItems.forEach(elem => {  
   elem.addEventListener('click', (event) =>{
-    event.preventDefault();    
+    menuItems.forEach(elem => elem.classList.remove('active-tab'));
+    event.target.classList.add('active-tab');
+    event.preventDefault();  
     if (elem == all) {
       All.render(all);
     } else if (elem == webDesign) {
@@ -254,10 +260,12 @@ menuItems.forEach(elem => {
 });
 
 // Tabs Activation...
-portfolioContainer.addEventListener('click', (event) => {
-  event.preventDefault();
-  document.querySelectorAll('img').forEach(elem => elem.classList.remove('activeImage'));
-  event.target.classList.add('activeImage');      
+
+portfolioContainer.querySelectorAll('img').forEach( elem => {
+  elem.addEventListener('click', (event) => {    
+    portfolioContainer.querySelectorAll('img').forEach( elem => elem.classList.remove('activeImage'));
+    event.target.classList.add('activeImage');
+  })      
 });
 
 // Form...
@@ -271,9 +279,10 @@ form.onsubmit = function (event) {
   const id = Number(form.dataset.id);
   let userNameField = document.querySelector('[name="name"]').value;
   let emailField  = document.querySelector('[name="email"]').value;
-  
-  let subjectField  = (document.querySelector('[name="subject"]').value != "")? document.querySelector('[name="subject"]').value : subjectFieldDV;
-  let userMessageField  = (document.querySelector('[name="userMessage"]').value != "")? `Описание: Portfolio project`: userMessageValueDV;
+  let userMessage = document.querySelector('[name="userMessage"]').value;
+  let userMessageSubject = document.querySelector('[name="subject"]').value;
+  let subjectField  = ( userMessageSubject != "")? `Тема: ${userMessageSubject}` : subjectFieldDV;
+  let userMessageField  = (userMessage != "")? `Описание: ${userMessage}`: userMessageValueDV;
 
   const user = [ userNameField , emailField , subjectField , userMessageField];
   showMessage(user);

@@ -317,6 +317,7 @@ li#first-child::before {
 }
 
 /*      Portfolio     */
+
 .container-portfolio {
   background: #2d303a;
   border-bottom: 6px solid #323746;
@@ -359,7 +360,11 @@ nav.portfolio-menu {
   padding: 4px 6px;  
 }
 .portfolio-menu-item:hover {
-  border-color: #c5c5c5;
+  border: 1px solid #c5c5c5;
+  color: #c5c5c5;
+}
+.active-tab {
+  border: 1px solid #c5c5c5;
   color: #c5c5c5;
 }
 .portfolio-menu-item + .portfolio-menu-item {
@@ -559,7 +564,7 @@ form {
 .message-container {
   position: fixed;
   z-index: 10;
-  top: calc(50%-width*0.5);
+  top: 50%;
   left: 50%;
   text-align: center;
   background: #f0d8d9;
